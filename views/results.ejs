@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Results</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>News Results</h1>
+  <a href="/">← Back to Search</a>
+  <% if (articles.length === 0) { %>
+    <p>No articles found.</p>
+  <% } else { %>
+    <% articles.forEach(article => { %>
+      <div class="article">
+        <h2><%= article.title %></h2>
+        <p><%= article.description || "No description available." %></p>
+        <a href="<%= article.url %>" target="_blank">Read more</a>
+      </div>
+    <% }) %>
+  <% } %>
+</body>
+</html>
